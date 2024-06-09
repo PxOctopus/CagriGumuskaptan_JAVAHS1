@@ -13,6 +13,9 @@ public class RestApis {
     public static final String GETALL = "/get-all";
     public static final String GETBYID = "/get-by-id";
     public static final String ADD = "/add";
+    public static final String GETBYKATEGORIADI = "/get-by-kategori-adi";
+    public static final String GETBYOZELLIKADI = "/get-by-ozellik-adi";
+    public static final String GETBYKATEGORIADIANDOZELIKADI = "/get-by-kategori-adi-and-ozellik-adi";
     public static final String GETALLBYCINSIYETANDBEDEN = "/get-all-by-cinsiyet-and-beden";
-    public static final String LISTPROPERTIES = "/list-properties";
+
 }

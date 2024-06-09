@@ -7,6 +7,8 @@ import com.cagri.cagrigumuskaptan_javahs1.repository.UrunOzellikleriRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class UrunOzellikleriService {
@@ -16,6 +18,22 @@ public class UrunOzellikleriService {
 
     public UrunOzellikleri save(UrunOzellikleriSaveRequestDto dto) {
         return repository.save(UrunOzellikleriMapper.INSTANCE.fromUrunOzellikleriSaveDto(dto));
+    }
+
+    public List<UrunOzellikleri> findByKategoriAdiAndOzellikAdi(String kategoriAdi, String ozellikAdi) {
+        return repository.findByKategoriAdiAndOzellikAdi(kategoriAdi, ozellikAdi);
+    }
+
+    public List<UrunOzellikleri> findByKategoriAdi(String kategoriAdi) {
+        return repository.findByKategoriAdi(kategoriAdi);
+    }
+
+    public List<UrunOzellikleri> findAll() {
+        return repository.findAll();
+    }
+
+    public List<UrunOzellikleri> findByOzellikAdi(String ozellikAdi) {
+        return repository.findByOzellikAdi(ozellikAdi);
     }
 
 
