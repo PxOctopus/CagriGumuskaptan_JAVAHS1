@@ -32,5 +32,6 @@ public class UrunOzellikleri {
     private ERenk renk;
 
     @ManyToOne
+    @JoinColumn(name = "urun_id")
     private Urun urun;
 }

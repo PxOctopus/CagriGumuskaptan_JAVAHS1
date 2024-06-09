@@ -1,21 +1,14 @@
 package com.cagri.cagrigumuskaptan_javahs1.controller;
 
 import com.cagri.cagrigumuskaptan_javahs1.dto.request.UrunOzellikleriSaveRequestDto;
-import com.cagri.cagrigumuskaptan_javahs1.entity.UrunOzellikleri;
 import com.cagri.cagrigumuskaptan_javahs1.exception.ErrorType;
 import com.cagri.cagrigumuskaptan_javahs1.exception.UrunException;
-import com.cagri.cagrigumuskaptan_javahs1.repository.UrunRepository;
 import com.cagri.cagrigumuskaptan_javahs1.service.UrunOzellikleriService;
-import com.cagri.cagrigumuskaptan_javahs1.utility.enums.EBeden;
-import com.cagri.cagrigumuskaptan_javahs1.utility.enums.ECinsiyet;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 
 import static com.cagri.cagrigumuskaptan_javahs1.config.RestApis.*;
@@ -41,11 +34,11 @@ public class UrunOzellikleriController {
         urunOzellikleriService.save(dto);
         return ResponseEntity.ok("Islem Basarili!");
     }
-    @GetMapping(LISTPROPERTIES)
-    public ResponseEntity<List<UrunOzellikleri>> getUrunByIdAndListOzellikler(@PathVariable Long id)  {
-        if (Objects.isNull(id))
-            throw new UrunException(ErrorType.PRODUCT_INVALID_PARAMETER_ERROR);
-        return ResponseEntity.ok(urunOzellikleriService.getUrunByIdAndListProperties());
-    }
+//    @GetMapping(LISTPROPERTIES)
+//    public ResponseEntity<List<UrunOzellikleri>> getUrunByIdAndListOzellikler(@PathVariable Long id)  {
+//        if (Objects.isNull(id))
+//            throw new UrunException(ErrorType.PRODUCT_INVALID_PARAMETER_ERROR);
+//        return ResponseEntity.ok(urunOzellikleriService.getUrunByIdAndListProperties(id));
+//    }
 
 }

@@ -2,7 +2,6 @@ package com.cagri.cagrigumuskaptan_javahs1.controller;
 
 import com.cagri.cagrigumuskaptan_javahs1.dto.request.UrunSaveRequestDto;
 import com.cagri.cagrigumuskaptan_javahs1.entity.Urun;
-import com.cagri.cagrigumuskaptan_javahs1.entity.UrunOzellikleri;
 import com.cagri.cagrigumuskaptan_javahs1.exception.ErrorType;
 import com.cagri.cagrigumuskaptan_javahs1.exception.UrunException;
 import com.cagri.cagrigumuskaptan_javahs1.service.UrunService;
@@ -51,6 +50,7 @@ public class UrunController {
     public ResponseEntity<List<Urun>> getAllByCinsiyet(ECinsiyet cinsiyet) {
         return ResponseEntity.ok(urunService.getAllByCinsiyet(cinsiyet));
     }
+
 
     @GetMapping(GETBYID)
     public ResponseEntity<Optional<Urun>> getUrunById(@PathVariable Long id) {

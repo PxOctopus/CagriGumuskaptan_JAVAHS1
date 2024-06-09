@@ -1,6 +1,5 @@
 package com.cagri.cagrigumuskaptan_javahs1.entity;
 
-import com.cagri.cagrigumuskaptan_javahs1.utility.enums.ERenk;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

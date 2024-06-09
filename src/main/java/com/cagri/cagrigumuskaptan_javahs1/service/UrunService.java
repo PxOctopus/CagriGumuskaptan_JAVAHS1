@@ -2,7 +2,6 @@ package com.cagri.cagrigumuskaptan_javahs1.service;
 
 import com.cagri.cagrigumuskaptan_javahs1.dto.request.UrunSaveRequestDto;
 import com.cagri.cagrigumuskaptan_javahs1.entity.Urun;
-import com.cagri.cagrigumuskaptan_javahs1.entity.UrunOzellikleri;
 import com.cagri.cagrigumuskaptan_javahs1.exception.ErrorType;
 import com.cagri.cagrigumuskaptan_javahs1.exception.UrunException;
 import com.cagri.cagrigumuskaptan_javahs1.mapper.UrunMapper;

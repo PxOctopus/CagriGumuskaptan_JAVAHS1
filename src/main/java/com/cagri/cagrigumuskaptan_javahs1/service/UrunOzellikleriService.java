@@ -4,15 +4,8 @@ import com.cagri.cagrigumuskaptan_javahs1.dto.request.UrunOzellikleriSaveRequest
 import com.cagri.cagrigumuskaptan_javahs1.entity.UrunOzellikleri;
 import com.cagri.cagrigumuskaptan_javahs1.mapper.UrunOzellikleriMapper;
 import com.cagri.cagrigumuskaptan_javahs1.repository.UrunOzellikleriRepository;
-import com.cagri.cagrigumuskaptan_javahs1.utility.enums.EBeden;
-import com.cagri.cagrigumuskaptan_javahs1.utility.enums.ECinsiyet;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
 
 @Service
 @RequiredArgsConstructor
@@ -26,9 +19,19 @@ public class UrunOzellikleriService {
     }
 
 
-    public List<UrunOzellikleri> getUrunByIdAndListProperties(Long id){
-        urunService.getUrunById(id);
-    }
+//    public List<UrunOzellikleri> getUrunByIdAndListProperties(Long id){
+//       Optional<Urun> urun = urunService.getUrunById(id);
+//       if (Objects.isNull(urun))
+//           throw new UrunException(ErrorType.PRODUCT_NOT_FOUND_ERROR);
+//       urun.urunOzellikleriListesiGetir();
+//       List<UrunOzellikleri> urunOzellikleriList = new ArrayList<>();
+//        urunOzellikleriList.add(urun.getUrunOzellikleri());
+//
+//        urunOzellikleriList.add(new UrunOzellikleri("Cinsiyet",
+//                Arrays.stream(ECinsiyet.values())
+//                        .map(Enum::name)
+//                        .collect(Collectors.toList())));
+//    }
 
 
 }
