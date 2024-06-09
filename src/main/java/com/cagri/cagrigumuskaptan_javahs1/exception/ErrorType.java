@@ -16,6 +16,7 @@ public enum ErrorType {
     PRODUCT_IMAGEURLS_EMPTY_ERROR(1003, "Urun resimleri bulunamadi, lutfen urun resimlerini yukleyiniz", HttpStatus.BAD_REQUEST),
     PRODUCT_NOT_FOUND_ERROR(1006, "Urun sistemde kayitli degildir!", HttpStatus.BAD_REQUEST),
     PRODUCT_INVALID_PARAMETER_ERROR(1005, "Urun Id si ya da urun fotograf URL'lerinin girilmesi zorunludur.",HttpStatus.BAD_REQUEST),
+    PROPERTIES_NOT_FOUND_ERROR(1007, "Urun özellikleri bulunamadi, lutfen urun özelliklerini yukleyiniz", HttpStatus.BAD_REQUEST),
     PRODUCT_EXISTS_ERROR(1004, "Urun sistemde kayitlidir, lutfen baska bir urun kaydediniz!", HttpStatus.BAD_REQUEST);
 
     private Integer code;

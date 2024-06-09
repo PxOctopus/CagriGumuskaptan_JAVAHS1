@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class UrunOzellikleriService {
     private final UrunOzellikleriRepository repository;
-    private final UrunService urunService;
+
 
 
     public UrunOzellikleri save(UrunOzellikleriSaveRequestDto dto) {

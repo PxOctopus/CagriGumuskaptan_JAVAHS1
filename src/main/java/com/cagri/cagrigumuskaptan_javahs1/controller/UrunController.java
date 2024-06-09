@@ -1,5 +1,6 @@
 package com.cagri.cagrigumuskaptan_javahs1.controller;
 
+import com.cagri.cagrigumuskaptan_javahs1.config.WebMvcConfig;
 import com.cagri.cagrigumuskaptan_javahs1.dto.request.UrunSaveRequestDto;
 import com.cagri.cagrigumuskaptan_javahs1.entity.Urun;
 import com.cagri.cagrigumuskaptan_javahs1.exception.ErrorType;
@@ -44,8 +45,9 @@ public class UrunController {
 
     @GetMapping(GETALLBYCINSIYETANDBEDEN)
     public ResponseEntity<List<Urun>> getAllByCinsiyetAndBeden(@RequestParam ECinsiyet cinsiyet, @RequestParam EBeden beden) {
-        List<Urun> urunler = urunService.getAllByCinsiyetAndBeden(cinsiyet, beden);
-        return ResponseEntity.ok(urunler);
+        if (Objects.isNull(cinsiyet) || Objects.isNull(beden))
+            throw new UrunException(ErrorType.PROPERTIES_NOT_FOUND_ERROR);
+        return ResponseEntity.ok(urunService.getAllByCinsiyetAndBeden(cinsiyet, beden));
     }
 
     @GetMapping(GETBYID)

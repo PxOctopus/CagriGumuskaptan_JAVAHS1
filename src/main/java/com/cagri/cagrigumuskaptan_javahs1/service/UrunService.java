@@ -20,7 +20,7 @@ import java.util.Optional;
 public class UrunService {
 
     private final UrunRepository repository;
-    private final UrunOzellikleriService urunOzellikleriService;
+
 
 
     public Urun save(UrunSaveRequestDto dto) {
@@ -39,6 +39,6 @@ public class UrunService {
     }
 
     public List<Urun> getAllByCinsiyetAndBeden(ECinsiyet cinsiyet, EBeden beden) {
-        return repository.findAllByCinsiyetContainingIgnoreCaseAndBedenContainingIgnoreCase(cinsiyet, beden);
+        return repository.findAllByCinsiyetContainingAndBedenContaining(cinsiyet, beden);
     }
 }

@@ -25,8 +25,7 @@ public class UrunOzellikleri {
     private Double urunYildizi;
 
 
-
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "urun_id")
     private Urun urun;
 }

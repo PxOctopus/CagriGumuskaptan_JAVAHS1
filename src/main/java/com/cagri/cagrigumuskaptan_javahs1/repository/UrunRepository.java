@@ -8,10 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface UrunRepository extends JpaRepository<Urun, Long> {
-    List<Urun> findAllByBedenContainingIgnoreCase(EBeden beden);
 
-    List<Urun> findAllByCinsiyetContainingIgnoreCase(ECinsiyet cinsiyet);
-
-    List<Urun> findAllByCinsiyetContainingIgnoreCaseAndBedenContainingIgnoreCase(ECinsiyet cinsiyet, EBeden beden);
+    List<Urun> findAllByCinsiyetContainingAndBedenContaining(ECinsiyet cinsiyet, EBeden beden);
 
 }
