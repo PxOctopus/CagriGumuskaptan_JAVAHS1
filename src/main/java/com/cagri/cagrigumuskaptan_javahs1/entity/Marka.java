@@ -17,4 +17,6 @@ public class Marka {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // id icin otomatik artan
     private Long id;
     private String ad;
+
+
 }

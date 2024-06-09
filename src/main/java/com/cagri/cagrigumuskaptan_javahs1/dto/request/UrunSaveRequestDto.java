@@ -2,6 +2,7 @@ package com.cagri.cagrigumuskaptan_javahs1.dto.request;
 
 import com.cagri.cagrigumuskaptan_javahs1.entity.Marka;
 import com.cagri.cagrigumuskaptan_javahs1.entity.Model;
+import com.cagri.cagrigumuskaptan_javahs1.entity.UrunOzellikleri;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.NotNull;
@@ -33,4 +34,5 @@ public class UrunSaveRequestDto {
 
     private Marka marka;
     private Model model;
+    private UrunOzellikleri urunOzellikleri;
 }

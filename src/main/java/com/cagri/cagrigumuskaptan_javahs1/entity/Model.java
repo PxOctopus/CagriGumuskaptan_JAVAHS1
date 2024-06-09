@@ -18,6 +18,6 @@ public class Model {
     private Long id;
     private String modelAdi;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Marka marka;
 }
