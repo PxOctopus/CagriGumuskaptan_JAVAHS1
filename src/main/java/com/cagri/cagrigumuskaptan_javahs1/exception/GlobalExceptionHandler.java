@@ -33,9 +33,9 @@ public class GlobalExceptionHandler {
      * ilgili sınıf hata fırlatırsa onu yakalar.
      *
      */
-    @ExceptionHandler(AracTakipException.class)
+    @ExceptionHandler(UrunException.class)
     @ResponseBody
-    public ResponseEntity<ErrorMessage> handlerSatisException(AracTakipException satisException){
+    public ResponseEntity<ErrorMessage> handlerSatisException(UrunException satisException){
         return  new ResponseEntity<>(createMessage(satisException.getErrorType(),satisException), satisException.getErrorType().getHttpStatus());
     }
 

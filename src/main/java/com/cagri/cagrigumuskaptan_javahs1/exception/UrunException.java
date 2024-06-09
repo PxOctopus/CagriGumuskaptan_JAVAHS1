@@ -9,9 +9,9 @@ import lombok.Getter;
  * constructor una (super) hata ile ilgili mesajınızı iletiyorsunuz.
  */
 @Getter
-public class AracTakipException extends RuntimeException{
+public class UrunException extends RuntimeException{
      private ErrorType errorType;
-    public AracTakipException(ErrorType errorType){
+    public UrunException(ErrorType errorType){
         super(errorType.getMessage());
         this.errorType = errorType;
     }

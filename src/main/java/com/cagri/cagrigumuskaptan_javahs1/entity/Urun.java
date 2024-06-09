@@ -1,5 +1,6 @@
 package com.cagri.cagrigumuskaptan_javahs1.entity;
 
+import com.cagri.cagrigumuskaptan_javahs1.utility.enums.ERenk;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -23,6 +24,8 @@ public class Urun {
     private String resimUrl2;
     private String resimUrl3;
     private Integer stokAdedi;
+    private Double urunFiyati;
+
 
     @ManyToOne(cascade = CascadeType.ALL)
     private Marka marka;
