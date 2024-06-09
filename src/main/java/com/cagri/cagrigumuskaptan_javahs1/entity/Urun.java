@@ -40,8 +40,6 @@ public class Urun {
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Marka marka;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Model model;
 
     @OneToMany(mappedBy = "urun", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<UrunOzellikleri> urunOzellikleriListesi;

@@ -21,7 +21,7 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 public class UrunSaveRequestDto {
-    private Long id;
+
     private String ad;
     private String aciklama;
 
@@ -37,7 +37,7 @@ public class UrunSaveRequestDto {
     private Integer stokAdedi;
     private Double urunFiyati;
 
-    private Marka marka;
+
     private Model model;
     private ERenk renk;
 

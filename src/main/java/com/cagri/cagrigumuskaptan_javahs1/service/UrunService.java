@@ -24,9 +24,12 @@ public class UrunService {
 
 
     public Urun save(UrunSaveRequestDto dto) {
-        if (repository.existsById(dto.getId())) {
-            throw new UrunException(ErrorType.PRODUCT_EXISTS_ERROR);
+        for (UrunOzellikleri urunOzellikleri : dto.getUrunOzellikleriListesi()) {
+            if (repository.existsById(urunOzellikleri.getUrun().getId())) {
+                throw new UrunException(ErrorType.PRODUCT_EXISTS_ERROR);
+            }
         }
+
         return repository.save(UrunMapper.INSTANCE.fromUrunSaveDto(dto));
     }
 
