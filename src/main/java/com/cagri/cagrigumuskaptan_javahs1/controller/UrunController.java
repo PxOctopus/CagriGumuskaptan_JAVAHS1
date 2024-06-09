@@ -41,16 +41,12 @@ public class UrunController {
         return ResponseEntity.ok(urunService.getAll());
     }
 
-    @GetMapping(GETALLBYBEDEN)
-    public ResponseEntity<List<Urun>> getAllByBeden(EBeden beden) {
-        return ResponseEntity.ok(urunService.getAllByBeden(beden));
-    }
 
-    @GetMapping(GETALLBYCINSIYET)
-    public ResponseEntity<List<Urun>> getAllByCinsiyet(ECinsiyet cinsiyet) {
-        return ResponseEntity.ok(urunService.getAllByCinsiyet(cinsiyet));
+    @GetMapping(GETALLBYCINSIYETANDBEDEN)
+    public ResponseEntity<List<Urun>> getAllByCinsiyetAndBeden(@RequestParam ECinsiyet cinsiyet, @RequestParam EBeden beden) {
+        List<Urun> urunler = urunService.getAllByCinsiyetAndBeden(cinsiyet, beden);
+        return ResponseEntity.ok(urunler);
     }
-
 
     @GetMapping(GETBYID)
     public ResponseEntity<Optional<Urun>> getUrunById(@PathVariable Long id) {

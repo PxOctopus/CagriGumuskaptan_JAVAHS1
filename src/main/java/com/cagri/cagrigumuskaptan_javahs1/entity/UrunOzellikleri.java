@@ -24,12 +24,7 @@ public class UrunOzellikleri {
     private String kategoriAdi;
     private Double urunYildizi;
 
-    @Enumerated(EnumType.STRING)
-    private ECinsiyet cinsiyet;
-    @Enumerated(EnumType.STRING)
-    private EBeden beden;
-    @Enumerated(EnumType.STRING)
-    private ERenk renk;
+
 
     @ManyToOne
     @JoinColumn(name = "urun_id")

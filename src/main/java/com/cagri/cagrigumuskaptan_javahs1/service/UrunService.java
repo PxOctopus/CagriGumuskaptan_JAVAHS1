@@ -2,6 +2,7 @@ package com.cagri.cagrigumuskaptan_javahs1.service;
 
 import com.cagri.cagrigumuskaptan_javahs1.dto.request.UrunSaveRequestDto;
 import com.cagri.cagrigumuskaptan_javahs1.entity.Urun;
+import com.cagri.cagrigumuskaptan_javahs1.entity.UrunOzellikleri;
 import com.cagri.cagrigumuskaptan_javahs1.exception.ErrorType;
 import com.cagri.cagrigumuskaptan_javahs1.exception.UrunException;
 import com.cagri.cagrigumuskaptan_javahs1.mapper.UrunMapper;
@@ -19,6 +20,7 @@ import java.util.Optional;
 public class UrunService {
 
     private final UrunRepository repository;
+    private final UrunOzellikleriService urunOzellikleriService;
 
 
     public Urun save(UrunSaveRequestDto dto) {
@@ -32,15 +34,11 @@ public class UrunService {
         return repository.findAll();
     }
 
-    public List<Urun> getAllByBeden(EBeden beden) {
-        return repository.findAllByEBedenContainingIgnoreCase(beden);
-    }
-
-    public List<Urun> getAllByCinsiyet(ECinsiyet cinsiyet) {
-        return repository.findAllByECinsiyetContainingIgnoreCase(cinsiyet);
-    }
-
     public Optional<Urun> getUrunById(Long id) {
         return repository.findById(id);
+    }
+
+    public List<Urun> getAllByCinsiyetAndBeden(ECinsiyet cinsiyet, EBeden beden) {
+        return repository.findAllByCinsiyetContainingIgnoreCaseAndBedenContainingIgnoreCase(cinsiyet, beden);
     }
 }

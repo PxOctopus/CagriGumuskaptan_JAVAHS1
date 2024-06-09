@@ -25,10 +25,6 @@ public class UrunOzellikleriSaveRequestDto {
     @Max(value = 5)
     private Double urunYildizi;
 
-    private ERenk renk;
 
-    private ECinsiyet cinsiyet;
-
-    private EBeden beden;
     private Urun urun;
 }
