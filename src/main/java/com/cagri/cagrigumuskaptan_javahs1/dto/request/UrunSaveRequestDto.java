@@ -8,6 +8,8 @@ import com.cagri.cagrigumuskaptan_javahs1.utility.enums.ECinsiyet;
 import com.cagri.cagrigumuskaptan_javahs1.utility.enums.ERenk;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,7 +27,7 @@ public class UrunSaveRequestDto {
     private String ad;
     private String aciklama;
 
-    @NotNull
+
     private String anaResimUrl;
     @NotNull
     private String resimUrl1;
@@ -37,6 +39,9 @@ public class UrunSaveRequestDto {
     private Integer stokAdedi;
     private Double urunFiyati;
 
+    @Min(value = 1)
+    @Max(value = 5)
+    private Double urunYildizi;
 
     private Model model;
     private ERenk renk;

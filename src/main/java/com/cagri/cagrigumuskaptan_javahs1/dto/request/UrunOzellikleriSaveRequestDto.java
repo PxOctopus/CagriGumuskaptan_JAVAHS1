@@ -21,10 +21,5 @@ public class UrunOzellikleriSaveRequestDto {
 
     private String ozellikAciklama;
 
-    @Min(value = 1)
-    @Max(value = 5)
-    private Double urunYildizi;
-
-
     private Urun urun;
 }

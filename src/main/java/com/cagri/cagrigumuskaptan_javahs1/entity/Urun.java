@@ -4,6 +4,9 @@ import com.cagri.cagrigumuskaptan_javahs1.utility.enums.EBeden;
 import com.cagri.cagrigumuskaptan_javahs1.utility.enums.ECinsiyet;
 import com.cagri.cagrigumuskaptan_javahs1.utility.enums.ERenk;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -29,6 +32,7 @@ public class Urun {
     private String resimUrl3;
     private Integer stokAdedi;
     private Double urunFiyati;
+    private Double urunYildizi;
 
     @Enumerated(EnumType.STRING)
     private ECinsiyet cinsiyet;
@@ -37,9 +41,8 @@ public class Urun {
     @Enumerated(EnumType.STRING)
     private ERenk renk;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToOne
     private Marka marka;
-
 
     @OneToMany(mappedBy = "urun", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<UrunOzellikleri> urunOzellikleriListesi;

@@ -21,9 +21,8 @@ public class UrunOzellikleri {
     private Long id;
     private String ozellikAdi;
     private String ozellikAciklama;
-    private String kategoriAdi;
-    private Double urunYildizi;
 
+    private String kategoriAdi;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "urun_id")
