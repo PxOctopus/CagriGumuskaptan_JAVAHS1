@@ -11,6 +11,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -34,5 +36,6 @@ public class UrunSaveRequestDto {
 
     private Marka marka;
     private Model model;
-    private UrunOzellikleri urunOzellikleri;
+
+    private List<UrunOzellikleri> urunOzellikleriListesi;
 }

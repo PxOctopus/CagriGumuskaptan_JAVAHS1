@@ -7,6 +7,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data // get,set toString
 @AllArgsConstructor // parametreli constructorlarin tumu
 @NoArgsConstructor // default constructor
@@ -33,6 +35,6 @@ public class Urun {
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Model model;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private UrunOzellikleri urunOzellikleri;
+    @OneToMany(mappedBy = "urun", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<UrunOzellikleri> urunOzellikleriListesi;
 }

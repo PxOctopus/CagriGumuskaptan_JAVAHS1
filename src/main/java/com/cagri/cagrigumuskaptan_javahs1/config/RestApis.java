@@ -15,5 +15,5 @@ public class RestApis {
     public static final String ADD = "/add";
     public static final String GETALLBYBEDEN = "/get-all-by-beden";
     public static final String GETALLBYCINSIYET = "/get-all-by-cinsiyet";
-    ;
+    public static final String LISTPROPERTIES = "/list-properties";
 }
