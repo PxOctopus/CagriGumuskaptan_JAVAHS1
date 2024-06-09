@@ -16,7 +16,7 @@ import org.springframework.web.method.annotation.MethodArgumentTypeMismatchExcep
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.muhammet.exception.ErrorType.BAD_REQUEST_ERROR;
+import static com.cagri.cagrigumuskaptan_javahs1.exception.ErrorType.BAD_REQUEST_ERROR;
 
 @ControllerAdvice
 @Slf4j
