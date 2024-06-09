@@ -20,26 +20,15 @@ public class UrunOzellikleriService {
     private final UrunOzellikleriRepository repository;
     private final UrunService urunService;
 
-    
 
     public UrunOzellikleri save(UrunOzellikleriSaveRequestDto dto) {
         return repository.save(UrunOzellikleriMapper.INSTANCE.fromUrunOzellikleriSaveDto(dto));
     }
 
 
-    public List<UrunOzellikleri> getListedProperties() {
-        List<UrunOzellikleri> urunOzellikleriList = urunService.
-
-        urunOzellikleriList.add(new UrunOzelliklerisA("Beden",
-                Arrays.stream(EBeden.values())
-                        .map(Enum::name)
-                        .collect(Collectors.toList())));
-
-        urunOzellikleriList.add(new UrunOzellikleri("Cinsiyet",
-                Arrays.stream(ECinsiyet.values())
-                        .map(Enum::name)
-                        .collect(Collectors.toList())));
-
-        return repository.;
+    public List<UrunOzellikleri> getUrunByIdAndListProperties(Long id){
+        urunService.getUrunById(id);
     }
+
+
 }

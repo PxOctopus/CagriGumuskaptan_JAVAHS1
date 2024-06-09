@@ -2,6 +2,7 @@ package com.cagri.cagrigumuskaptan_javahs1.controller;
 
 import com.cagri.cagrigumuskaptan_javahs1.dto.request.UrunSaveRequestDto;
 import com.cagri.cagrigumuskaptan_javahs1.entity.Urun;
+import com.cagri.cagrigumuskaptan_javahs1.entity.UrunOzellikleri;
 import com.cagri.cagrigumuskaptan_javahs1.exception.ErrorType;
 import com.cagri.cagrigumuskaptan_javahs1.exception.UrunException;
 import com.cagri.cagrigumuskaptan_javahs1.service.UrunService;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 import static com.cagri.cagrigumuskaptan_javahs1.config.RestApis.*;
 
@@ -50,6 +52,11 @@ public class UrunController {
         return ResponseEntity.ok(urunService.getAllByCinsiyet(cinsiyet));
     }
 
-
+    @GetMapping(GETBYID)
+    public ResponseEntity<Optional<Urun>> getUrunById(@PathVariable Long id) {
+        if (Objects.isNull(id))
+            throw new UrunException(ErrorType.PRODUCT_INVALID_PARAMETER_ERROR);
+        return ResponseEntity.ok(urunService.getUrunById(id));
+    }
 
 }

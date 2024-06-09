@@ -41,9 +41,11 @@ public class UrunOzellikleriController {
         urunOzellikleriService.save(dto);
         return ResponseEntity.ok("Islem Basarili!");
     }
-
     @GetMapping(LISTPROPERTIES)
-    public ResponseEntity<List<UrunOzellikleri>> getUrunOzellikleri() {
-        return ResponseEntity.ok(urunOzellikleriService.getListedProperties());
+    public ResponseEntity<List<UrunOzellikleri>> getUrunByIdAndListOzellikler(@PathVariable Long id)  {
+        if (Objects.isNull(id))
+            throw new UrunException(ErrorType.PRODUCT_INVALID_PARAMETER_ERROR);
+        return ResponseEntity.ok(urunOzellikleriService.getUrunByIdAndListProperties());
     }
+
 }
