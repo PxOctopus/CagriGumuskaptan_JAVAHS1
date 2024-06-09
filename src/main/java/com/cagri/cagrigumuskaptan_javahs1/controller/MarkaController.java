@@ -9,4 +9,5 @@ import static com.cagri.cagrigumuskaptan_javahs1.config.RestApis.*;
 @RequiredArgsConstructor
 @RequestMapping(MARKA)
 public class MarkaController {
+
 }

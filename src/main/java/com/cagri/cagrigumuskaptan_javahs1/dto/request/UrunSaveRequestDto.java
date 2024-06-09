@@ -27,7 +27,6 @@ public class UrunSaveRequestDto {
     private String ad;
     private String aciklama;
 
-
     private String anaResimUrl;
     @NotNull
     private String resimUrl1;
@@ -45,9 +44,8 @@ public class UrunSaveRequestDto {
 
     private Model model;
     private ERenk renk;
-
     private ECinsiyet cinsiyet;
-
     private EBeden beden;
+
     private List<UrunOzellikleri> urunOzellikleriListesi;
 }

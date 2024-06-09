@@ -21,8 +21,6 @@ public class UrunService {
 
     private final UrunRepository repository;
 
-
-
     public Urun save(UrunSaveRequestDto dto) {
         for (UrunOzellikleri urunOzellikleri : dto.getUrunOzellikleriListesi()) {
             if (repository.existsById(urunOzellikleri.getUrun().getId())) {

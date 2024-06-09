@@ -22,7 +22,6 @@ public class UrunOzellikleriController {
 
     private final UrunOzellikleriService urunOzellikleriService;
 
-
     @PostMapping(ADD)
     public ResponseEntity<String> urunOzellikleriEkle(@RequestBody @Valid UrunOzellikleriSaveRequestDto dto) {
         if (Objects.isNull(dto.getUrun().getId())) {
