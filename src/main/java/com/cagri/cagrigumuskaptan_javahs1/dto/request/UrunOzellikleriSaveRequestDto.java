@@ -7,6 +7,8 @@ import com.cagri.cagrigumuskaptan_javahs1.utility.enums.ERenk;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.ManyToOne;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -22,6 +24,8 @@ public class UrunOzellikleriSaveRequestDto {
 
     private String ozellikAciklama;
 
+    @Min(value = 1)
+    @Max(value = 5)
     private Double urunYildizi;
 
     private ERenk renk;
